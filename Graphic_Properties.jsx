@@ -71,6 +71,8 @@ switch (myObjName)
 
 if (myObj.itemLink.status != LinkStatus.NORMAL)
   msgbox(myMsgHead + "The Frame refers to a Graphic that doesn't exist or is inaccessible." + myMsgFoot);
+if ((myObj.visibleBounds[0] < 0) && (Math.abs(myObj.visibleBounds[0]) > myDoc.pasteboardPreferences.pasteboardMargins[1]))
+  msgbox(myMsgHead + "The top edge of the Graphic inside the Frame is outside the Pasteboard. The Script can't handle this condition." + myMsgFoot);
 
 try {
   myObj.place(myObj.itemLink.filePath, true);
