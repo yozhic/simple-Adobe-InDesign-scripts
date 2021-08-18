@@ -1,4 +1,4 @@
-//DESCRIPTION:Changing linked Graphic Properties. Usage: Select a Frame containing Graphics and run script.
+//DESCRIPTION:Changing linked Graphic Properties. Usage: Select a Frame containing Graphics and run the Script.
 
 #target indesign
 #targetengine main
@@ -22,8 +22,8 @@ var myMsgFoot;
 myMsgHead = "Graphic Properties\n\n";
 myMsgFoot = "\n\n─────────────────────────\nPublic Domain 2021\n";
 myMsgHelp = myMsgHead +
-            "Usage:\nSelect a Frame containing Graphics or Graphic itself and run the script.\n\n" +
-            "Note:\nThe script does not handle Text, Tables, Groups or Vector Objects." +
+            "Usage:\nSelect a Frame containing Graphics or Graphic itself and run the Script.\n\n" +
+            "Note:\nThe Script does not handle Text, Tables, Groups or Vector Objects." +
             myMsgFoot;
 
 if (app.documents.length == 0) msgbox(myMsgHelp);
@@ -70,7 +70,7 @@ switch (myObjName)
 }
 
 if (myObj.itemLink.status != LinkStatus.NORMAL)
-  msgbox(myMsgHead + "The Frame refers to a Graphic that does not exist or is inaccessible." + myMsgFoot);
+  msgbox(myMsgHead + "The Frame refers to a Graphic that doesn't exist or is inaccessible." + myMsgFoot);
 
 try {
   myObj.place(myObj.itemLink.filePath, true);
