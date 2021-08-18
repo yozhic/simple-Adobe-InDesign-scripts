@@ -64,7 +64,7 @@ switch (myObjName)
     if (myObj == undefined) msgbox(myMsgHelp);
     break;
   default:
-    //Debugging message
+    //Debug message
     msgbox(myMsgHead + "Unknown Name of Object:\n" + myObjName + "\n\nEdit the Script by adding a New Object Name to the appropriate condition." + myMsgFoot);
     break;
 }
@@ -74,7 +74,10 @@ if (myObj.itemLink.status != LinkStatus.NORMAL)
 
 try {
   myObj.place(myObj.itemLink.filePath, true);
-} catch (e) { }
+} catch (err) {
+  //Debug message: uncomment if the script is silent on startup
+  //msgbox(err);
+}
 
 exit();
 
