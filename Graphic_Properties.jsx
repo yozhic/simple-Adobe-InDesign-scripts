@@ -8,7 +8,7 @@
   Version .........: 0.4
   C.Date / M.Date .: 12.08.2021 / 18.08.2021
   Target App ......: Adobe InDesign
-  Tested on .......: 16.3.2 Mac; 15.1.2 Win
+  Tested on .......: 13.1.1−16.3.2 Intel Mac; 15.1.2 Win
   Inspired by .....: https://creativepro.com/script-show-options-files/
 \********************************************************/
 
