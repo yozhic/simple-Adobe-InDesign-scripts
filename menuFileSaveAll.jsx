@@ -18,14 +18,22 @@
 
 // THE MAIN PROCESS
 // -----------------------------------------------
-var fcaTitle = "Save All";
+var fcaTitle = {
+	cs:"Uložit vše",
+	de:"Alles speichern",
+	en:"Save All",
+	es:"Guardar todo",
+	fr:"Tout enregistrer",
+	it:"Salva tutto",
+	ru:"Сохранить все"
+	};
 
 var fcaHandlers = {
 	'beforeDisplay' : function(ev)
 		{
 		ev.target.enabled = (app.documents.length>1);
 		},
-		
+
 	'onInvoke' : function()
 		{
 		var doc;
@@ -36,7 +44,7 @@ var fcaHandlers = {
 			}
 		}
 	};
-	
+
 
 // THE MENU INSTALLER
 // -----------------------------------------------
@@ -60,4 +68,4 @@ var refItem = fileMenu.menuItems.item("$ID/&Save");
 fileMenu.menuItems.add(mnuAction,LocationOptions.after,refItem);
 
 return true;
-})(fcaTitle, fcaHandlers);
+})(localize(fcaTitle), fcaHandlers);
