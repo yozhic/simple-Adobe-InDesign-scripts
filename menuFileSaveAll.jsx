@@ -35,13 +35,16 @@ var fcaHandlers = {
 
 	'onInvoke': function() {
 		var doc;
-		for (var i = app.documents.length - 1; i >= 0; i--) {
+		for (var i = 0; i < app.documents.length; i++) {
 			doc = app.documents[i];
-			doc.save();
+			if (doc.converted) {
+				doc.save(File(doc.filePath + '/' + doc.name));
+			} else {
+				doc.save();
+			}
 		}
 	}
 };
-
 
 // THE MENU INSTALLER
 // -----------------------------------------------
